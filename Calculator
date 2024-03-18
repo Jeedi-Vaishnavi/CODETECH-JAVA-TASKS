@@ -2,7 +2,11 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.lang.*;
+import java.io.*;
+import java.text.*;
+import java.lang.Math.*;
+import java.lang.event.*;
 public class Calculator implements ActionListener
 {
     JFrame frame;
