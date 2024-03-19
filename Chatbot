@@ -16,39 +16,39 @@ class Chatbotdemo extends JFrame{
      frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
      frame.setLayout(null);
      frame.setVisible(true);
-     frame.setSize(600,400);
+     frame.setSize(400,400);
      frame.getContentPane().setBackground(Color.GRAY);
      frame.add(textarea);
      frame.add(textfield);
-     frame.setResizable(false);
+  
      //create textarea and customize it
-     textarea.setSize(500,310);
-     textarea.setLocation(1,1);
+    
+     textarea.setSize(2000,600);
+     textarea.setLocation(2,1);
      textarea.setBackground(Color.BLACK);
      textarea.setFont(myfont);
      //create textfield and customize it
-      textfield.setSize(300,30);
-      textfield.setLocation(1,320);
+      textfield.setBounds(1,605,1000,40);
       textfield.setFont(myfont);
       frame.add(button);
       label.setText("SEND"); 
       button.add(label);
       // create button and customize it
-     button.setSize(400,30);
-     button.setLocation(300,320);
+     button.setBounds(1010,605,267,40);
+     
      button.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e)
         {
             if(e.getSource()==button)
             {
-                String text=textfield.getText().toLowerCase();
+                String text=textfield.getText();
                 textarea.setForeground(Color.GREEN);//set textarea with given color
                 textarea.append("You-> "+text+"\n");
                 textfield.setText("");
                 //check user input and provide appropriate responses
                 if(text.contains("hi"))
                 {
-                   reply("Hi there");
+                   reply("Hi there...How can i assist you today");
                 }
                 else if(text.contains("what is your name"))
                 {
@@ -65,6 +65,14 @@ class Chatbotdemo extends JFrame{
                 else if(text.contains("I love you"))
                 {
                     reply("I love you too");
+                }
+                else if(text.contains("CSE stands for"))
+                {
+                    reply("Computer Science and Engineering");
+                }
+                else if(text.contains("what does internship means"))
+                {
+                   reply("An internship is a temporary position where individuals gain practical work experience in a specific field or industry.An internship is a temporary position where individuals gain practical work experience in a specific field or industry");
                 }
                 else
                 {
@@ -85,3 +93,5 @@ public class Chatbot {
         Chatbotdemo cb=new Chatbotdemo();
     }
 }
+ 
+   
